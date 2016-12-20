@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     // console.log(dancer.$node[0])
     
-    // console.log('this.$node', this.$node);
+    console.log('this.$node', this.$node);
     $('body').append(dancer.$node[0]);
   });
 });
