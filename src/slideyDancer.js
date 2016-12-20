@@ -41,11 +41,18 @@ MakeSlideyDancer.prototype.step = function() {
 
   this.$node.animate({
     'left': '+=100',
+    'transform': 'scaleX(' + -1 + ')'
   }, 300);
+  
+  // this.$node.css('-webkit-transform', 'scaleX(' + 1 + ')');
+
 
   this.$node.animate({
     'left': '-=100',
   }, 300);
+  // this.$node.css('-webkit-transform', 'scaleX(' + -1 + ')');
+
+  // this.$node.css('transform', 'scaleY(' + 1 + ')');
 };
 
 MakeSlideyDancer.prototype.lineUp = function() {
