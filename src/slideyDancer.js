@@ -31,10 +31,10 @@ MakeSlideyDancer.prototype.step = function() {
 
   this.$node.animate({
     'left': '+=100',
-  }, 1000);
+  }, 100);
 
   this.$node.animate({
     'left': '-=100',
-  }, 1000);
+  }, 100);
 };
 

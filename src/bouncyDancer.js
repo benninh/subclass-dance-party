@@ -30,6 +30,12 @@ MakeBouncyDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
 
   // change toggle to make bouncy
-  this.$node.toggle();
+  this.$node.animate({
+    'top': '+=100',
+  }, 100);
+
+  this.$node.animate({
+    'top': '-=100',
+  }, 30);
 };
 

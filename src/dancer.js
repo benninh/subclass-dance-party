@@ -33,8 +33,9 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
 
 MakeDancer.prototype.step = function() {
 
-  setTimeout(this.step.bind(this), this.stepTime);
-
+  window.timeouts.push(setTimeout(this.step.bind(this), this.stepTime));
+  // first 'this' is the subclass, called by .call(this)
+  // second 'this' is MakeDancer, this setTimeout.
 };
 
 MakeDancer.prototype.setPosition = function(top, left) {
@@ -44,3 +45,7 @@ MakeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+MakeDancer.prototype.lineUp = function() {
+  this.$node.css('left', 0);
+}

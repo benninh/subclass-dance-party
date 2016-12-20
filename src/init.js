@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.timeouts = [];
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -31,7 +32,20 @@ $(document).ready(function() {
     // console.log(dancer.$node[0])
     
     // console.log('this.$node', this.$node);
+    window.dancers.push(dancer.$node[0]);
     $('body').append(dancer.$node[0]);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    // console.log(window.dancers);
+
+    window.timeouts.forEach(function(item) {
+      window.clearTimeout(item);
+    });
+    
+    window.dancers.forEach(function(item) {
+      $(item).css('top', 10);
+    });
   });
 });
 
