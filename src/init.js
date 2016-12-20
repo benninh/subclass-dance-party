@@ -32,7 +32,7 @@ $(document).ready(function() {
     // console.log(dancer.$node[0])
     
     // console.log('this.$node', this.$node);
-    window.dancers.push(dancer.$node[0]);
+    window.dancers.push(dancer);
     $('body').append(dancer.$node[0]);
   });
 
@@ -41,13 +41,14 @@ $(document).ready(function() {
 
     window.timeouts.forEach(function(item) {
       window.clearTimeout(item);
-      $(item).stop();
+      // $(item).stop();
       
     });
     
     window.dancers.forEach(function(item) {
-      $(item).stop(true, true);
-      $(item).css('left', 10);
+      item.lineUp();
+      // $(item.$node).stop(true, true);
+      // $(item.$node).css('top', '50%');
     });
   });
 });

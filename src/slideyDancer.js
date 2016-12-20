@@ -2,6 +2,16 @@ var MakeSlideyDancer = function(top, left, timeBetweenSteps) {
 
   this.stepTime = timeBetweenSteps;
   MakeDancer.call(this, top, left, timeBetweenSteps);
+
+
+  this.$node.removeClass('dancer');
+  this.$node.addClass('slideyDancer');
+
+
+  // TODO how do we just instantiate with the right class
+  // this.$node = $('<span class="slideyDancer"></span>');
+
+
   
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -36,5 +46,12 @@ MakeSlideyDancer.prototype.step = function() {
   this.$node.animate({
     'left': '-=100',
   }, 300);
+};
+
+MakeSlideyDancer.prototype.lineUp = function() {
+  // MakeDancer.prototype.lineUp();
+  this.$node.stop(true, true);
+  // this.$node.css('display', 'inline');
+  this.$node.css('top', '50%');
 };
 

@@ -27,6 +27,50 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
-  position:absolute;
+  position: absolute;
+}
+
+.slideyDancer{
+  background-image: url('img/stylinLion.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+.glowyDancer{
+  background-image: url('img/glowCat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+.spinnyDancer{
+  background-image: url('img/rotatingCat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  animation: roll 1s infinite;
+}
+
+.spinnyDancer:hover {
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  } 100% {
+    transform: rotate(360deg);
+  }
 }
 
