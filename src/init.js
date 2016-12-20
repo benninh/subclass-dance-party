@@ -41,10 +41,13 @@ $(document).ready(function() {
 
     window.timeouts.forEach(function(item) {
       window.clearTimeout(item);
+      $(item).stop();
+      
     });
     
     window.dancers.forEach(function(item) {
-      $(item).css('top', 10);
+      $(item).stop(true, true);
+      $(item).css('left', 10);
     });
   });
 });
