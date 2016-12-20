@@ -1,4 +1,4 @@
-var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
+var MakeBouncyDancer = function(top, left, timeBetweenSteps) {
 
   this.stepTime = timeBetweenSteps;
   MakeDancer.call(this, top, left, timeBetweenSteps);
@@ -21,14 +21,15 @@ var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
   //return blinkyDancer;
 };
 
-MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
-MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
+MakeBouncyDancer.prototype = Object.create(MakeDancer.prototype);
+MakeBouncyDancer.prototype.constructor = MakeBouncyDancer;
 
  
-MakeBlinkyDancer.prototype.step = function() {
+MakeBouncyDancer.prototype.step = function() {
   
   MakeDancer.prototype.step.call(this);
 
+  // change toggle to make bouncy
   this.$node.toggle();
 };
 
