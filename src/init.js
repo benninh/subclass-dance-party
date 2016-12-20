@@ -22,12 +22,16 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    var dancer = new dancerMakerFunction(  // BENSON, I added a new keyword here too.
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
+
+    // console.log(dancer.$node[0])
+    
+    // console.log('this.$node', this.$node);
+    $('body').append(dancer.$node[0]);
   });
 });
 
