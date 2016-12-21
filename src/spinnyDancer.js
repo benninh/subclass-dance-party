@@ -37,10 +37,8 @@ MakeSpinnyDancer.prototype.step = function() {
 };
 
 MakeSpinnyDancer.prototype.lineUp = function() {
-  // MakeDancer.prototype.lineUp();
   this.$node.css('animation', 'none');
-  this.$node.css('display', 'inline');
-  this.$node.css('top', '50%');
+  this.$node.css('top', '40%');
 };
 
 

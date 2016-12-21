@@ -40,25 +40,18 @@ MakeSlideyDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
 
   this.$node.animate({
-    'left': '+=100',
-    'transform': 'scaleX(' + -1 + ')'
+    'left': '+=100'
+    // 'filter': 'FlipH'
   }, 300);
   
-  // this.$node.css('-webkit-transform', 'scaleX(' + 1 + ')');
-
-
   this.$node.animate({
     'left': '-=100',
   }, 300);
-  // this.$node.css('-webkit-transform', 'scaleX(' + -1 + ')');
-
-  // this.$node.css('transform', 'scaleY(' + 1 + ')');
 };
 
 MakeSlideyDancer.prototype.lineUp = function() {
-  // MakeDancer.prototype.lineUp();
   this.$node.stop(true, true);
-  // this.$node.css('display', 'inline');
-  this.$node.css('top', '50%');
+  this.$node.css('animation', 'none');
+  this.$node.css('top', '70%');
 };
 

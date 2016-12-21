@@ -40,10 +40,9 @@ MakeGlowyDancer.prototype.step = function() {
 };
 
 MakeGlowyDancer.prototype.lineUp = function() {
-  // MakeDancer.prototype.lineUp();
   this.$node.stop(true, true);
   this.$node.css('display', 'inline');
-  this.$node.css('top', '50%');
+  this.$node.css('top', '65%');
 };
 
 

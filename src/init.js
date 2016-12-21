@@ -29,27 +29,35 @@ $(document).ready(function() {
       Math.random() * 1000
     );
 
-    // console.log(dancer.$node[0])
-    
-    // console.log('this.$node', this.$node);
     window.dancers.push(dancer);
     $('body').append(dancer.$node[0]);
   });
 
   $('.lineUpButton').on('click', function(event) {
-    // console.log(window.dancers);
 
     window.timeouts.forEach(function(item) {
       window.clearTimeout(item);
-      // $(item).stop();
-      
     });
-    
+
     window.dancers.forEach(function(item) {
+      $(item.$node[0]).css('transition', 'all 1s ease-in-out');
       item.lineUp();
-      // $(item.$node).stop(true, true);
-      // $(item.$node).css('top', '50%');
     });
+  });
+
+  $('.populateButton').on('click', function(event) {
+    var arrayOfDancerFunctions = [MakeGlowyDancer, MakeBouncyDancer, MakeSlideyDancer, MakeSpinnyDancer, MakeBirdDancer];
+    for (var i = 0; i < 5; i++) {
+      arrayOfDancerFunctions.forEach(function(element, i, functions) {
+        var dancer = new arrayOfDancerFunctions[i](
+        $('body').height() * .8 * Math.random(),
+        $('body').width() * .8 * Math.random(),
+        Math.random() * 1000
+        );
+        window.dancers.push(dancer);
+        $('body').append(dancer.$node[0]);
+      });
+    }
   });
 });
 

@@ -2,6 +2,9 @@ var MakeBouncyDancer = function(top, left, timeBetweenSteps) {
 
   this.stepTime = timeBetweenSteps;
   MakeDancer.call(this, top, left, timeBetweenSteps);
+
+  this.$node.removeClass('dancer');
+  this.$node.addClass('bouncyDancer');
   
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -29,13 +32,18 @@ MakeBouncyDancer.prototype.step = function() {
   
   MakeDancer.prototype.step.call(this);
 
-  // change toggle to make bouncy
   this.$node.animate({
     'top': '+=100',
-  }, 300);
+  }, 200);
 
   this.$node.animate({
     'top': '-=100',
-  }, 100);
+  }, 75);
 };
 
+MakeBouncyDancer.prototype.lineUp = function() {
+  
+  this.$node.stop(true, true);
+  this.$node.css('top', '80%');
+
+};
